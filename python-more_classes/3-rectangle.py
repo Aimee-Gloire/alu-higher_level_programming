@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module defines a class
+This module defines a class - Rectangle
 """
 
 
@@ -51,3 +51,25 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def area(self):
+        return (self.__width * self.__height)
+
+    def perimeter(self):
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return ((self.__width + self.__height) * 2)
+
+    def __str__(self):
+        counter = 0
+        output = ""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        else:
+            while counter < self.__height:
+                output += "#"*self.__width
+                if counter == (self.__height - 1):
+                    break
+                output += "\n"
+                counter += 1
+        return output
